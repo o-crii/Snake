@@ -1,0 +1,16 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	text-align: center;
+}
+
+#Title{
+	padding-top: 25px;
+}
+
+#Board{
+	padding-top: 100px;
+}
