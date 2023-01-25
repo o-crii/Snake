@@ -56,6 +56,14 @@ function update() {
 		PosizioneMela()
 	}
 
+	for (let i = SnakeBody.length-1; i > 0; i--){
+		SnakeBody[i] = SnakeBody[i-1] //partiamo dalla fine del corpo del serpente (la coda) che ogni volta che il serpente avanzerà prenderà le coordinate precedenti aggiornandole rimanendo sempre indietro e attaccata alla testa del serpente
+	}
+
+	if(SnakeBody.length){
+		SnakeBody[0] = [SnakeX, SnakeY] //impostiamo inizialmente il corpo del serpente che è pari a 0 che riguarda la parte prima della testa e la imposteremo sulle coordinate della testa così avanzeranno insieme
+	}
+
 	context.fillStyle="lime" //setta il riempimento del blocco lime per il colore del serpente//
 	SnakeX += SnakeVX * blocksize //faccio muovere il serpente di un blocco sull'asse x
 	SnakeY += SnakeVY * blocksize //faccio muovere il serpente di un blocco sull'asse y
@@ -67,7 +75,7 @@ function update() {
 
 	for (let i = 0; i < SnakeBody.length; i++){
 		context.fillRect(SnakeBody[i][0], SnakeBody[i][1], blocksize, blocksize); //queste sono le coordinate x e y che prenderanno la dimensione del singolo blocco grazie a blocksize
-	}
+	} //la mela che viene mangiata diventa il corpo del serpente ma non si aggrega ad esso rimane fissa (DA SISTEMARE)
 }
 
 function changeDirection(e) {
