@@ -10,7 +10,7 @@ var SnakeY = blocksize * 7;
 var SnakeVX = 0; //velocità del serpente sull'asse x = 0//
 var SnakeVY = 0; //velocità del serpente sull'asse y = 0//
 //facendo così facciamo spawnare il serpente nel punto 7, 7, del nostro canvas all'inizio del gioco//
-var SnakeBody[]; //il corpo del serpente sarà un array che memorizzerà un mucchio di segmenti che equivalgono ad un segmento x o y
+var SnakeBody = []; //il corpo del serpente sarà un array che memorizzerà un mucchio di segmenti che equivalgono ad un segmento x o y
 
 //disegnamo la mela//
 var MelaX;
@@ -51,7 +51,7 @@ function update() {
 
 	if (SnakeX == MelaX && SnakeY == MelaY) {
 
-		SnakeBody.push([MelaX, MelaY]); //dopo aver mangiato la mela il corpo del serpente si allungherà, in base alla direzione in cui sta andando, di un segmento sull'asse x o sull'asse y
+		SnakeBody.push([MelaX, MelaY]) //dopo aver mangiato la mela il corpo del serpente si allungherà, in base alla direzione in cui sta andando, di un segmento sull'asse x o sull'asse y
 
 		PosizioneMela()
 	}
