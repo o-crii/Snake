@@ -4,14 +4,33 @@
 }
 
 body{
-	text-align: center;
 	background-image: url(https://th.bing.com/th?q=Snake+Game+Apple+Eater+Google&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=it-IT&cc=IT&setlang=en&adlt=moderate&t=1&mw=247);
 }
 
 #Title{
-	padding-top: 25px;
+	text-align: center;
+	padding-top: 55px;
+	font-size: 70px;
 }
 
 #Board{
-	padding-top: 100px;
+	padding-top: 55px;
+	position: relative;
+	left: 31%;
+	transform: translateX(-100%);
+}
+
+.flex{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+#score{
+	text-align: center;
+}
+
+.Count{
+	width: 400px;
+	height: 400px;
 }
