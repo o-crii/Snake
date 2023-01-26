@@ -17,6 +17,8 @@ var MelaX;
 var MelaY;
 //settiamo lo spawn della mela//
 
+var GameOver = false;
+
 window.onload = function() {
 	Board = document.getElementById('Board')  //la variabile Board ha un tag canvas//
 
@@ -39,6 +41,11 @@ window.onload = function() {
 }
 
 function update() {
+
+	if (GameOver) {
+		return; //vogliamo che finisca di disegnare quando si perde quindi quando il gioco è finito
+	}
+
 	context.fillStyle="black" //setta il riempimento nero del contesto//
 	context.fillRect(0, 0, Board.width, Board.height) //partiamo dall'angolo 0,0 che dovrebbe rappresentare il primo quadratino in alto a sinistra e riempiamo di nero il canvas fino all'ultimo quadratino
 
@@ -76,6 +83,21 @@ function update() {
 	for (let i = 0; i < SnakeBody.length; i++){
 		context.fillRect(SnakeBody[i][0], SnakeBody[i][1], blocksize, blocksize); //queste sono le coordinate x e y che prenderanno la dimensione del singolo blocco grazie a blocksize
 	} //la mela che viene mangiata diventa il corpo del serpente ma non si aggrega ad esso rimane fissa (DA SISTEMARE)
+
+	//condizioni del GameOver
+	if (SnakeX < 0 || SnakeX > cols * blocksize || SnakeY < 0 || SnakeY > rows * blocksize) { // condizione utilizzata per quando il serpente supera con l'asse x o y i limiti del nostro canvas
+		GameOver = true
+		alert("Game Over")
+	}
+
+	for(let i = 0; i < SnakeBody.length; i++) {
+
+		if (SnakeX == SnakeBody[i][0] && SnakeY == SnakeBody[i][1]) {
+			
+			GameOver = true
+			alert("Game Over")
+		}
+	}
 }
 
 function changeDirection(e) {
