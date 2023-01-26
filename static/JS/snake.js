@@ -17,6 +17,8 @@ var MelaX;
 var MelaY;
 //settiamo lo spawn della mela//
 
+let score = 0
+
 var GameOver = false;
 
 window.onload = function() {
@@ -40,6 +42,11 @@ window.onload = function() {
 	setInterval(update, 1000/10); //ogni 100 millisecondi eseguirà la funzione di aggiornamento
 }
 
+function updateScore(){
+	score++
+	document.querySelector("#score span").innerHTML = score 
+}
+
 function update() {
 
 	if (GameOver) {
@@ -59,7 +66,7 @@ function update() {
 	if (SnakeX == MelaX && SnakeY == MelaY) {
 
 		SnakeBody.push([MelaX, MelaY]) //dopo aver mangiato la mela il corpo del serpente si allungherà, in base alla direzione in cui sta andando, di un segmento sull'asse x o sull'asse y
-
+		updateScore()
 		PosizioneMela()
 	}
 
