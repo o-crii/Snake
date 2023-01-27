@@ -3,6 +3,8 @@ var rows = 20; //righe canvas//
 var cols = 20; //colonne canvas//
 var Board;
 var context; //sarà l'oggetto che utilizzeremo per disegnare//
+let lx = 25
+let ly = 25
 
 //disegno la testa del serpente//
 var SnakeX = blocksize * 7; 
@@ -40,12 +42,15 @@ window.onload = function() {
 
 	//update(); //ripetiamo la funzione update più volte perché sennò non si accocchia mentre il serpente si muove
 	setInterval(update, 1000/10); //ogni 100 millisecondi eseguirà la funzione di aggiornamento
+
 }
 
 function updateScore(){
 	score++
 	document.querySelector("#score span").innerHTML = score 
 }
+
+
 
 function update() {
 
