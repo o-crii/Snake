@@ -20,10 +20,11 @@
 }
 
 #Board{
-	padding-top: 55px;
 	position: relative;
 	left: 31%;
 	transform: translateX(-100%);
+	border: 5px solid black;
+	border-radius: 10px;
 }
 
 .flex{
