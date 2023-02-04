@@ -58,11 +58,11 @@ function update() {
 		return; //vogliamo che finisca di disegnare quando si perde quindi quando il gioco è finito
 	}
 
-	//context.fillStyle="orange" //setta il riempimento nero del contesto//
-	//context.fillRect(0, 0, Board.width, Board.height) // Board.width, Board.height   partiamo dall'angolo 0,0 che dovrebbe rappresentare il primo quadratino in alto a sinistra e riempiamo di nero il canvas fino all'ultimo quadratino
+	context.fillStyle="orange" //setta il riempimento nero del contesto//
+	context.fillRect(0, 0, Board.width, Board.height) // Board.width, Board.height   partiamo dall'angolo 0,0 che dovrebbe rappresentare il primo quadratino in alto a sinistra e riempiamo di nero il canvas fino all'ultimo quadratino
 
 
-	for(let i=0; i<Board.width; i++){
+	/*for(let i=0; i<Board.width; i++){
 		context.fillStyle="blue"
 		context.fillRect(0, 0, Board.width, i)
 	}
